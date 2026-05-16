@@ -5,6 +5,6 @@ const scoreController = require("./score.controller");
 const router = express.Router();
 
 router.use(protect);
-router.post("/:profileId", scoreController.calculateScore);
+router.get("/:profileId", scoreController.calculateScore);
 
 module.exports = router;
