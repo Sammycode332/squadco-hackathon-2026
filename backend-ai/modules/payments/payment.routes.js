@@ -16,14 +16,14 @@ const virtualAccountSchema = z.object({
     beneficiaryAccount: z.string().optional(),
   }),
   params: z.object({
-    profileId: z.string().min(3),
+    profileId: z.string().min(1),
   }),
 });
 
 const paymentSchema = z.object({
   body: z.object({
-    profileId: z.string().min(3),
-    amount: z.number().positive(),
+    profileId: z.string().min(1),
+    amount: z.coerce.number().positive(),
     channel: z.string().optional(),
     status: z.string().optional(),
     reference: z.string().optional(),
